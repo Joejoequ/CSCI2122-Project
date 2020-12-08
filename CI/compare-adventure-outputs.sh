@@ -35,10 +35,6 @@ if [ $levelDDF -gt 0 ]; then
 	exit 100
 fi
 
-if [ $powerDDF -gt 0 ]; then
-	printf "Your power program isn't producing correct output in dead."
-	exit 102
-fi
 
 if [ $strategyADF -gt 0 ]; then
 	printf "Your strategy program isn't producing correct output in alive."
