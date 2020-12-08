@@ -32,7 +32,7 @@ fi
 
 if [ $levelDDF -gt 0 ]; then
 	printf "Your level program isn't producing correct output in dead."
-	exit 101
+	exit 100
 fi
 if [ $powerADF -gt 0 ]; then
 	printf "Your power program isn't producing correct output in alive."
@@ -41,36 +41,36 @@ fi
 
 if [ $powerDDF -gt 0 ]; then
 	printf "Your power program isn't producing correct output in dead."
-	exit 103
+	exit 102
 fi
 
 if [ $strategyADF -gt 0 ]; then
 	printf "Your strategy program isn't producing correct output in alive."
-	exit 104
+	exit 102
 fi
 
 if [ $strategyDDF -gt 0 ]; then
 	printf "Your strategy program isn't producing correct output in dead."
-	exit 105
+	exit 102
 fi
 if [ $subtletyADF -gt 0 ]; then
 	printf "Your subtlety program isn't producing correct output in alive."
-	exit 106
+	exit 102
 fi
 
 if [ $subtletyDDF -gt 0 ]; then
 	printf "Your subtlety program isn't producing correct output in dead."
-	exit 107
+	exit 102
 fi
 
 if [ $charmADF -gt 0 ]; then
 	printf "Your charm program isn't producing correct output in alive."
-	exit 108
+	exit 102
 fi
 
 if [ $charmDDF -gt 0 ]; then
 	printf "Your charm program isn't producing correct output in dead."
-	exit 109
+	exit 102
 fi
 
 
