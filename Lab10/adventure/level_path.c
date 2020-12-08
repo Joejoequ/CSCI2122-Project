@@ -78,8 +78,8 @@ float time_use=0;
         }
     }
 gettimeofday(&end,NULL);
-    time_use=(end.tv_sec-start.tv_sec)*1000000+(end.tv_usec-start.tv_usec); 
-    printf("time is %.10f microseconds\n",time_use);
+    time_use=(end.tv_sec-start.tv_sec)*1000+(end.tv_usec-start.tv_usec)/1000; 
+    printf("time is %.10f ms\n",time_use);
     FILE *dead = fopen("level_dead", "w");
     FILE *alive = fopen("level_alive", "w");
     for (int i = 0; i < 300; i++) {
