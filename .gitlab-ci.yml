@@ -45,7 +45,6 @@ run-adventure:
         - ./charm 1
         - ./power 1
         - ../../CI/compare-adventure-outputs.sh
-        - make clean
 
 
 
