@@ -58,5 +58,5 @@ run-deusex:
         - rm -f deusex
         - make
         - test -f deusex
-        - ./pool
-        - ../../CI/compare-deusex-outputs.sh
+        - ./deusex
+        
