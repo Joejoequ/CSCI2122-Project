@@ -9,7 +9,7 @@
 #include "queue.h"
 #include "pthread.h"
 #include <string.h>
-#include <sys/time.h>
+
 int main(int argc, char *argv[]) {
     FILE *fp = fopen("heroes.lot", "r");
     ArrayList *heroes = alist_initialize(301, sizeof(hero), "hero");
@@ -62,11 +62,8 @@ int main(int argc, char *argv[]) {
     int poolsize = atoi(argv[1]);
 
     pthread_t threads[poolsize];
-    float time_use=0;
-    struct timeval start;
-    struct timeval end;
-    gettimeofday(&start,NULL);
     for (int i = 0; i < poolsize; i++) {
+
         pthread_create(&threads[i], NULL, challenge, queue_dequeue(operation));
         pthread_join(threads[i], NULL);
         if (queue_size(operation) == 0) {
@@ -77,9 +74,6 @@ int main(int argc, char *argv[]) {
             i = 0;
         }
     }
-    gettimeofday(&end,NULL);
-    time_use=(end.tv_sec-start.tv_sec)*1000000+(end.tv_usec-start.tv_usec);
-    printf("time is %.10f microseconds\n",time_use);
     FILE *dead = fopen("level_dead", "w");
     FILE *alive = fopen("level_alive", "w");
     for (int i = 0; i < 300; i++) {
