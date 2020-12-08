@@ -1,0 +1,63 @@
+# Robert Smith -- Check Lab 9 Code Ouputs
+
+stages:
+    - setup
+    - build
+    - test
+
+check-file-structure:
+    stage: setup
+    tags:
+        - ugrad
+    script:
+        - test -d Lab10
+        - test -d Lab10/adventure
+        - test -d Lab10/deusex
+        - test -f Lab10/adventure/Makefile
+        - test -f Lab10/deusex/Makefile
+
+run-adventure:
+    stage: test
+    tags:
+        - ugrad
+    script:
+        - cp CI/objects/adventure/* Lab10/adventure/
+        - cd Lab10/adventure/
+        - rm -f power level subtlety strategy charm
+        - make
+        - test -f power
+        - test -f level
+        - test -f subtlety
+        - test -f strategy
+        - test -f charm
+        - ./level 1
+        - ./level 2
+        - ./level 3
+        - ./level 4
+        - ./level 5
+        - ./level 6
+        - ./level 7
+        - ./level 8
+        - ./level 9
+        - ./level 10
+        - ./subtlety 1
+        - ./strategy 1
+        - ./charm 1
+        - ./power 1
+        - ../../CI/compare-adventure-outputs.sh
+        - make clean
+
+
+
+run-deusex:
+    stage: test
+    tags:
+        - ugrad
+    script:
+        - cp CI/objects/adventure/* Lab10/deusex/
+        - cd Lab10/deusex/
+        - rm -f deusex
+        - make
+        - test -f deusex
+        - ./pool
+        - ../../CI/compare-deusex-outputs.sh
