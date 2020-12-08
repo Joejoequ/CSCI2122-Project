@@ -1,29 +1,29 @@
 #!/bin/bash
 
-levelAWC=$(cat level_alive | wc -l)
-levelADF=$(diff level_alive level_alive_expected | wc -l)
-levelDWC=$(cat level_dead | wc -l)
-levelDDF=$(diff level_dead level_dead_expected | wc -l)
+levelAWC=$(cat level_alive | wc -c)
+levelADF=$(diff level_alive level_alive_expected | wc -c)
+levelDWC=$(cat level_dead | wc -c)
+levelDDF=$(diff level_dead level_dead_expected | wc -c)
 
-powerAWC=$(cat power_alive | wc -l)
-powerADF=$(diff power_alive power_alive_expected | wc -l)
-powerDWC=$(cat power_dead | wc -l)
-powerDDF=$(diff power_dead power_dead_expected | wc -l)
+powerAWC=$(cat power_alive | wc -c)
+powerADF=$(diff power_alive power_alive_expected | wc -c)
+powerDWC=$(cat power_dead | wc -c)
+powerDDF=$(diff power_dead power_dead_expected | wc -c)
 
-strategyAWC=$(cat strategy_alive | wc -l)
-strategyADF=$(diff strategy_alive strategy_alive_expected | wc -l)
-strategyDWC=$(cat strategy_dead | wc -l)
-strategyDDF=$(diff strategy_dead strategy_dead_expected | wc -l)
+strategyAWC=$(cat strategy_alive | wc -c)
+strategyADF=$(diff strategy_alive strategy_alive_expected | wc -c)
+strategyDWC=$(cat strategy_dead | wc -c)
+strategyDDF=$(diff strategy_dead strategy_dead_expected | wc -c)
 
-subtletyAWC=$(cat subtlety_alive | wc -l)
-subtletyADF=$(diff subtlety_alive subtlety_alive_expected | wc -l)
-subtletyDWC=$(cat subtlety_dead | wc -l)
-subtletyDDF=$(diff subtlety_dead subtlety_dead_expected | wc -l)
+subtletyAWC=$(cat subtlety_alive | wc -c)
+subtletyADF=$(diff subtlety_alive subtlety_alive_expected | wc -c)
+subtletyDWC=$(cat subtlety_dead | wc -c)
+subtletyDDF=$(diff subtlety_dead subtlety_dead_expected | wc -c)
 
-charmWC=$(cat charm_alive | wc -l)
-charmDF=$(diff charm_alive charm_alive_expected | wc -l)
-charmWC=$(cat charm_dead | wc -l)
-charmDF=$(diff charm_dead charm_dead_expected | wc -l)
+charmWC=$(cat charm_alive | wc -c)
+charmDF=$(diff charm_alive charm_alive_expected | wc -c)
+charmWC=$(cat charm_dead | wc -c)
+charmDF=$(diff charm_dead charm_dead_expected | wc -c)
 
 if [ $levelADF -gt 0 ]; then
 	printf "Your level program isn't producing correct output in alive."
