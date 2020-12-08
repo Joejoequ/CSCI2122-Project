@@ -59,10 +59,7 @@ int main(int argc, char *argv[]) {
     }
 
 
-    int poolsize=1;
-    if (argv[1] != NULL) {
-        poolsize = atoi(argv[1]);
-    }
+    int poolsize = atoi(argv[1]);
 
     pthread_t threads[poolsize];
     for (int i = 0; i < poolsize; i++) {

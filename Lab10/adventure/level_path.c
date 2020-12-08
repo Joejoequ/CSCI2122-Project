@@ -20,9 +20,9 @@ int main(int argc, char *argv[]) {
         double S, A, I, C;
         fflush(fp);
         fgets(name, 40, fp);
-        name = strtok(name, "\r\n");
+        name=strtok(name, "\r\n");
         fgets(class, 20, fp);
-        class = strtok(class, "\r\n");
+        class=strtok(class, "\r\n");
         fscanf(fp, "%lf, %lf, %lf, %lf\n", &S, &A, &I, &C);
 
         hero *h = hero_birth(name, class, S, A, I, C);
@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
         int location_level;
         double LS, LA, LI, LC;
         fgets(location_name, 40, fp);
-        location_name = strtok(location_name, "\r\n");
+        location_name=strtok(location_name, "\r\n");
         fscanf(fp, "%d, %lf, %lf, %lf, %lf\n", &location_level, &LS, &LA, &LI, &LC);
 
         location *l = location_generate(location_name, location_level, LS, LA, LI, LC);
@@ -57,11 +57,9 @@ int main(int argc, char *argv[]) {
         }
         heap_remove(locations);
     }
-    int poolsize=1;
-    if (argv[1] != NULL) {
-        poolsize = atoi(argv[1]);
-    }
 
+
+    int poolsize = atoi(argv[1]);
 
     pthread_t threads[poolsize];
     for (int i = 0; i < poolsize; i++) {
@@ -83,10 +81,10 @@ int main(int argc, char *argv[]) {
         if (result->alive) {
             fprintf(alive, "%s %s %.2lf %.2lf %.2lf %.2lf\n", result->name, result->class, result->attribute[0],
                     result->attribute[1], result->attribute[2], result->attribute[3]);
-        } else {
+        }
+        else{
             fprintf(dead, "%s %s %.2lf %.2lf %.2lf %.2lf %d %s\n", result->name, result->class, result->attribute[0],
-                    result->attribute[1], result->attribute[2], result->attribute[3], result->primary_attribute,
-                    result->died_location->name);
+                    result->attribute[1], result->attribute[2], result->attribute[3],result->primary_attribute,result->died_location->name);
         }
     }
     fclose(alive);
