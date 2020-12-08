@@ -37,12 +37,12 @@ fi
 
 
 if [ $powerADF -gt 1 ]; then
-	printf "Your level program isn't producing correct output in alive."
+	printf "Your power program isn't producing correct output in alive."
 	exit 100
 fi
 
 if [ $powerDDF -gt 1 ]; then
-	printf "Your level program isn't producing correct output in dead."
+	printf "Your power program isn't producing correct output in dead."
 	exit 100
 fi
 
