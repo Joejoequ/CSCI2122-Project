@@ -6,7 +6,7 @@ CSTD = --std=c18
 
 
 deusex: deusex_path.o threads.o array_list.o heap.o hero.o location.o array_list.o queue.o linked_list.o
-	$(COMPILER) $(CSTD) array_list.o deusex_path.o linked_list.o queue.o threads.o hero.o location.o heap.o -o charm -lpthread
+	$(COMPILER) $(CSTD) array_list.o deusex_path.o linked_list.o queue.o threads.o hero.o location.o heap.o -o deusex -lpthread
 
 
 
