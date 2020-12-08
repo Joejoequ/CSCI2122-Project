@@ -3,40 +3,15 @@ COMPILER = gcc
 # Define  which C standard  to use.
 CSTD = --std=c18
 
-all:level power strategy subtlety charm
 
-charm: charm_path.o threads.o array_list.o heap.o hero.o location.o array_list.o queue.o linked_list.o
-	$(COMPILER) $(CSTD) array_list.o charm_path.o linked_list.o queue.o threads.o hero.o location.o heap.o -o charm -lpthread
 
-subtlety: subtlety_path.o threads.o array_list.o heap.o hero.o location.o array_list.o queue.o linked_list.o
-	$(COMPILER) $(CSTD) array_list.o subtlety_path.o linked_list.o queue.o threads.o hero.o location.o heap.o -o subtlety -lpthread
-
-strategy: strategy_path.o threads.o array_list.o heap.o hero.o location.o array_list.o queue.o linked_list.o
-	$(COMPILER) $(CSTD) array_list.o strategy_path.o linked_list.o queue.o threads.o hero.o location.o heap.o -o strategy -lpthread
-
-power: power_path.o threads.o array_list.o heap.o hero.o location.o array_list.o queue.o linked_list.o
-	$(COMPILER) $(CSTD) array_list.o power_path.o linked_list.o queue.o threads.o hero.o location.o heap.o -o power -lpthread
-
-level: level_path.o threads.o array_list.o heap.o hero.o location.o array_list.o queue.o linked_list.o
-	$(COMPILER) $(CSTD) array_list.o level_path.o linked_list.o queue.o threads.o hero.o location.o heap.o -o level -lpthread
+deusex: deusex_path.o threads.o array_list.o heap.o hero.o location.o array_list.o queue.o linked_list.o
+	$(COMPILER) $(CSTD) array_list.o deusex_path.o linked_list.o queue.o threads.o hero.o location.o heap.o -o charm -lpthread
 
 
 
-level_path.o: level_path.c
-	$(COMPILER) $(CSTD) -c level_path.c
-
-power_path.o: power_path.c
-	$(COMPILER) $(CSTD) -c power_path.c
-
-strategy_path.o: strategy_path.c
-	$(COMPILER) $(CSTD) -c strategy_path.c
-
-subtlety_path.o: subtlety_path.c
-	$(COMPILER) $(CSTD) -c subtlety_path.c
-
-charm_path: charm_path.c
-	$(COMPILER) $(CSTD) -c charm_path.c
-
+deusex_path.o: deusex_path.c
+	$(COMPILER) $(CSTD) -c deusex_path.c
 
 
 array_list.o: array_list.c array_list.h
