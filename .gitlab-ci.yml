@@ -58,5 +58,5 @@ run-deusex:
         - rm -f deusex
         - make
         - test -f deusex
-        - ./deusex
+        - ./deusex 2
         
