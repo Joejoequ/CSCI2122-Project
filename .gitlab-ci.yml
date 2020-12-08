@@ -40,10 +40,10 @@ run-adventure:
         - ./level 8
         - ./level 9
         - ./level 10
-        - ./subtlety 1
-        - ./strategy 1
-        - ./charm 1
-        - ./power 1
+        - ./subtlety 2
+        - ./strategy 2
+        - ./charm 2
+        - ./power 2
         - ./compare-adventure-outputs.sh
 
 
