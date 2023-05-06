@@ -1,4 +1,4 @@
-# Robert Smith -- Check Lab 9 Code Ouputs
+
 
 stages:
     - setup
@@ -48,15 +48,4 @@ run-adventure:
 
 
 
-run-deusex:
-    stage: test
-    tags:
-        - ugrad
-    script:
-        - cp CI/objects/adventure/* Lab10/deusex/
-        - cd Lab10/deusex/
-        - rm -f deusex
-        - make
-        - test -f deusex
-        - ./deusex 2
-        
+
